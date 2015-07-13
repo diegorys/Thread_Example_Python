@@ -21,13 +21,8 @@ def main():
 	languages = ["Python", "Java", "C#", "PHP", "C++", "Cobol", "Ruby", "C", "ADA", "Lisp", "Prolog"] #List of programming lenguages.
 	selected = [0] #Index of the programming language selected.
 
-	threads = list() #List of threads.
-
 	tSelect = threading.Thread(target=select, args=(languages,selected)) #Thread to select programming language.
 	tShow = threading.Thread(target=show, args=(languages,selected)) #Thread for showing the selected programming language.
-
-	threads.append(tSelect) #Append the thread to the list.
-	threads.append(tShow)
 
 	tSelect.start() #Starts the thread execution.
 	tShow.start()
